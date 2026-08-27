@@ -314,6 +314,46 @@ button:hover{
   }
 }
 
+/* MUSIC BUTTON */
+
+.music-control{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:10000;
+  width:52px;
+  height:52px;
+  padding:0;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin:0;
+}
+
+/* SOUND MESSAGE */
+
+.sound-status{
+  position:fixed;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  background:#27131a;
+  color:white;
+  padding:10px 18px;
+  border-radius:999px;
+  font-size:13px;
+  z-index:10001;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+}
+
+.sound-status.show{
+  opacity:1;
+}
+
 @media(max-width:650px){
 
   .card{
@@ -364,6 +404,35 @@ button:hover{
 
 <body>
 
+<!-- BACKGROUND MUSIC -->
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SOUND EFFECTS -->
+
+<audio id="clickSound" preload="auto">
+  <source src="click.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="gift1Sound" preload="auto">
+  <source src="gift1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="gift2Sound" preload="auto">
+  <source src="gift2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="gift3Sound" preload="auto">
+  <source src="gift3.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="gift4Sound" preload="auto">
+  <source src="gift4.mp3" type="audio/mpeg">
+</audio>
+
+
 <div class="app">
 <div class="card">
 
@@ -389,7 +458,7 @@ button:hover{
     <b>Ready?</b> 👀
   </p>
 
-  <button onclick="go(2)">
+  <button onclick="startExperience(2)">
     OPEN KARO ✨
   </button>
 
@@ -657,14 +726,105 @@ button:hover{
 </div>
 
 
+<!-- MUSIC CONTROL -->
+
+<button
+  class="music-control"
+  id="musicButton"
+  onclick="toggleMusic()"
+  title="Music On / Off">
+  🎵
+</button>
+
+<div class="sound-status" id="soundStatus"></div>
+
+
 <script>
 
 let current=1;
+let musicStarted=false;
+let musicOn=true;
+
+
+/* AUDIO ELEMENTS */
+
+const bgMusic=document.getElementById("bgMusic");
+const clickSound=document.getElementById("clickSound");
+const gift1Sound=document.getElementById("gift1Sound");
+const gift2Sound=document.getElementById("gift2Sound");
+const gift3Sound=document.getElementById("gift3Sound");
+const gift4Sound=document.getElementById("gift4Sound");
+
+
+/* SOUND FUNCTION */
+
+function playSound(audio){
+
+  try{
+
+    audio.currentTime=0;
+
+    const promise=audio.play();
+
+    if(promise !== undefined){
+      promise.catch(()=>{});
+    }
+
+  }catch(e){}
+
+}
+
+
+/* NORMAL BUTTON SOUND */
+
+function buttonSound(){
+  playSound(clickSound);
+}
+
+
+/* START WEBSITE + MUSIC */
+
+function startExperience(n){
+
+  buttonSound();
+
+  startMusic();
+
+  go(n);
+
+}
+
+
+/* START MUSIC */
+
+function startMusic(){
+
+  if(musicStarted) return;
+
+  musicStarted=true;
+
+  bgMusic.volume=0.35;
+
+  const promise=bgMusic.play();
+
+  if(promise !== undefined){
+
+    promise.catch(()=>{
+
+      musicStarted=false;
+
+    });
+
+  }
+
+}
 
 
 /* PAGE NAVIGATION */
 
 function go(n){
+
+  buttonSound();
 
   document
     .querySelectorAll('.screen')
@@ -692,17 +852,37 @@ function go(n){
 
 function gift(el,n){
 
+  buttonSound();
+
+  el.classList.remove('open');
+
+  void el.offsetWidth;
+
   el.classList.add('open');
+
 
   const messages=[
 
-    "🎉 Gift 1: Shweta Didi, aapke liye unlimited happiness aur good vibes! ❤️",
+    "🎉 HURRAAA! Gift 1: Shweta Didi, aapke liye unlimited happiness aur good vibes! ❤️",
 
-    "😄 Gift 2: Ek lifetime ka annoying-but-loving bhai. Sorry, return policy nahi hai! 😂❤️",
+    "😄 YEEEEEE! Gift 2: Ek lifetime ka annoying-but-loving bhai. Sorry, return policy nahi hai! 😂❤️",
 
-    "💌 Gift 3: Aapki care aur support ke liye ek dil se THANK YOU. ❤️"
+    "😂 Gift 3: Aapki care aur support ke liye ek dil se THANK YOU! ❤️"
 
   ];
+
+
+  const sounds=[
+
+    gift1Sound,
+    gift2Sound,
+    gift3Sound
+
+  ];
+
+
+  playSound(sounds[n-1]);
+
 
   document
     .getElementById('giftMessage')
@@ -713,9 +893,13 @@ function gift(el,n){
 }
 
 
-/* SECRET */
+/* SECRET BUTTON */
 
 function secret(){
+
+  buttonSound();
+
+  playSound(gift4Sound);
 
   document
     .getElementById('surprise')
@@ -730,6 +914,10 @@ function secret(){
 
 function celebrate(){
 
+  buttonSound();
+
+  playSound(gift4Sound);
+
   confetti(100);
 
   setTimeout(()=>{
@@ -738,7 +926,66 @@ function celebrate(){
       "Happy Raksha Bandhan, Shweta Didi — Yash ❤️"
     );
 
-  },500);
+  },700);
+
+}
+
+
+/* MUSIC ON / OFF */
+
+function toggleMusic(){
+
+  if(bgMusic.paused){
+
+    bgMusic.volume=0.35;
+
+    const promise=bgMusic.play();
+
+    if(promise !== undefined){
+      promise.catch(()=>{});
+    }
+
+    musicOn=true;
+
+    document
+      .getElementById("musicButton")
+      .textContent="🎵";
+
+    showStatus("🎵 Music ON");
+
+  }else{
+
+    bgMusic.pause();
+
+    musicOn=false;
+
+    document
+      .getElementById("musicButton")
+      .textContent="🔇";
+
+    showStatus("🔇 Music OFF");
+
+  }
+
+}
+
+
+/* STATUS */
+
+function showStatus(text){
+
+  const status=
+    document.getElementById("soundStatus");
+
+  status.textContent=text;
+
+  status.classList.add("show");
+
+  setTimeout(()=>{
+
+    status.classList.remove("show");
+
+  },1500);
 
 }
 

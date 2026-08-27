@@ -3,247 +3,816 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Kajal Didi ❤️ | Happy Raksha Bandhan</title>
+<title>For Shweta Didi ❤️ | Happy Raksha Bandhan</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap');
 
 *{box-sizing:border-box;margin:0;padding:0}
+
 :root{
-  --red:#a9143d;--pink:#f36b8b;--cream:#fff8ed;--gold:#e7ad45;
+  --red:#a9143d;
+  --pink:#f36b8b;
+  --cream:#fff8ed;
+  --gold:#e7ad45;
   --dark:#391521;
 }
+
 body{
-  min-height:100vh;font-family:Poppins,sans-serif;color:var(--dark);
+  min-height:100vh;
+  font-family:Poppins,sans-serif;
+  color:var(--dark);
   background:
     radial-gradient(circle at 15% 20%,#ffd9e4 0 7%,transparent 25%),
     radial-gradient(circle at 85% 80%,#ffe9bd 0 8%,transparent 25%),
     linear-gradient(135deg,#fff1f5,#fffaf0);
   overflow-x:hidden;
 }
+
 body:before{
-  content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.16;
   background-image:radial-gradient(#a9143d 1px,transparent 1px);
   background-size:22px 22px;
 }
-.app{width:min(960px,94%);margin:28px auto;position:relative}
+
+.app{
+  width:min(960px,94%);
+  margin:28px auto;
+  position:relative;
+}
+
 .card{
-  min-height:650px;background:rgba(255,250,240,.94);
-  border:5px solid var(--red);border-radius:32px;padding:30px;
-  box-shadow:0 25px 70px #7b18352b;position:relative;overflow:hidden;
+  min-height:650px;
+  background:rgba(255,250,240,.94);
+  border:5px solid var(--red);
+  border-radius:32px;
+  padding:30px;
+  box-shadow:0 25px 70px #7b18352b;
+  position:relative;
+  overflow:hidden;
 }
-.card:before,.card:after{content:"🪷";position:absolute;font-size:54px;opacity:.8}
-.card:before{top:10px;left:14px}.card:after{bottom:10px;right:14px}
-.screen{display:none;min-height:580px;align-items:center;justify-content:center;text-align:center;flex-direction:column;animation:show .65s ease}
+
+.card:before,
+.card:after{
+  content:"🪷";
+  position:absolute;
+  font-size:54px;
+  opacity:.8;
+}
+
+.card:before{top:10px;left:14px}
+.card:after{bottom:10px;right:14px}
+
+.screen{
+  display:none;
+  min-height:580px;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  flex-direction:column;
+  animation:show .65s ease;
+}
+
 .screen.active{display:flex}
-@keyframes show{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
-.badge{display:inline-block;padding:8px 16px;border-radius:30px;background:#ffe0e8;color:var(--red);font-weight:600;margin-bottom:15px}
-h1{font-family:Pacifico,cursive;color:var(--red);font-size:clamp(38px,7vw,70px);line-height:1.1;margin:8px 0 16px}
-h2{color:var(--red);font-size:clamp(28px,5vw,45px);margin-bottom:14px}
-p{font-size:18px;line-height:1.8;max-width:690px;margin:8px auto 22px}
-button{
-  border:0;border-radius:999px;background:linear-gradient(135deg,var(--red),#df315c);
-  color:white;padding:14px 25px;font-size:16px;font-weight:700;cursor:pointer;
-  box-shadow:0 10px 22px #a9143d35;transition:.25s;margin:6px
+
+@keyframes show{
+  from{
+    opacity:0;
+    transform:translateY(18px) scale(.98)
+  }
+  to{
+    opacity:1;
+    transform:none
+  }
 }
-button:hover{transform:translateY(-3px) scale(1.03)}
-.heart{font-size:76px;animation:beat 1.15s infinite}
-@keyframes beat{50%{transform:scale(1.16)}}
-.rakhi{font-size:105px;animation:swing 2s infinite ease-in-out}
-@keyframes swing{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+
+.badge{
+  display:inline-block;
+  padding:8px 16px;
+  border-radius:30px;
+  background:#ffe0e8;
+  color:var(--red);
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+h1{
+  font-family:Pacifico,cursive;
+  color:var(--red);
+  font-size:clamp(38px,7vw,70px);
+  line-height:1.1;
+  margin:8px 0 16px;
+}
+
+h2{
+  color:var(--red);
+  font-size:clamp(28px,5vw,45px);
+  margin-bottom:14px;
+}
+
+p{
+  font-size:18px;
+  line-height:1.8;
+  max-width:690px;
+  margin:8px auto 22px;
+}
+
+button{
+  border:0;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--red),#df315c);
+  color:white;
+  padding:14px 25px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 22px #a9143d35;
+  transition:.25s;
+  margin:6px;
+}
+
+button:hover{
+  transform:translateY(-3px) scale(1.03)
+}
+
+.heart{
+  font-size:76px;
+  animation:beat 1.15s infinite
+}
+
+@keyframes beat{
+  50%{transform:scale(1.16)}
+}
+
+.rakhi{
+  font-size:105px;
+  animation:swing 2s infinite ease-in-out
+}
+
+@keyframes swing{
+  0%,100%{transform:rotate(-8deg)}
+  50%{transform:rotate(8deg)}
+}
 
 .photos{
-  width:min(760px,100%);display:grid;grid-template-columns:1fr 1.2fr 1fr;
-  gap:12px;align-items:center;margin:18px auto 22px
+  width:min(760px,100%);
+  display:grid;
+  grid-template-columns:1fr 1.2fr 1fr;
+  gap:12px;
+  align-items:center;
+  margin:18px auto 22px
 }
-.photo{width:100%;height:245px;object-fit:cover;border-radius:20px;border:4px solid white;box-shadow:0 8px 25px #0002}
-.photo.center{height:290px}
-.caption{font-weight:700;color:var(--red);margin-top:10px}
 
-.gifts{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:20px 0}
-.gift{
-  width:145px;height:145px;border-radius:20px;background:linear-gradient(145deg,#ff7897,#c91d4c);
-  display:flex;align-items:center;justify-content:center;font-size:70px;cursor:pointer;
-  box-shadow:0 15px 25px #a9143d30;transition:.25s;position:relative
+.photo{
+  width:100%;
+  height:245px;
+  object-fit:cover;
+  border-radius:20px;
+  border:4px solid white;
+  box-shadow:0 8px 25px #0002
 }
-.gift:hover{transform:translateY(-10px) rotate(2deg)}
-.gift.open{animation:giftopen .65s}
-@keyframes giftopen{35%{transform:scale(1.18) rotate(8deg)}100%{transform:scale(1)}}
-.gift:after{content:"";position:absolute;inset:0;border-radius:20px;border:3px solid #ffd4df;opacity:.5}
-#giftMessage{min-height:34px;color:var(--red);font-weight:700;font-size:18px}
+
+.photo.center{height:290px}
+
+.caption{
+  font-weight:700;
+  color:var(--red);
+  margin-top:10px
+}
+
+.gifts{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:20px 0
+}
+
+.gift{
+  width:145px;
+  height:145px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#ff7897,#c91d4c);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:70px;
+  cursor:pointer;
+  box-shadow:0 15px 25px #a9143d30;
+  transition:.25s;
+  position:relative
+}
+
+.gift:hover{
+  transform:translateY(-10px) rotate(2deg)
+}
+
+.gift.open{
+  animation:giftopen .65s
+}
+
+@keyframes giftopen{
+  35%{
+    transform:scale(1.18) rotate(8deg)
+  }
+  100%{
+    transform:scale(1)
+  }
+}
+
+.gift:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  border:3px solid #ffd4df;
+  opacity:.5
+}
+
+#giftMessage{
+  min-height:34px;
+  color:var(--red);
+  font-weight:700;
+  font-size:18px
+}
 
 .memory{
-  width:min(800px,100%);display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:15px 0 20px
+  width:min(800px,100%);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:15px 0 20px
 }
-.memory img{width:100%;height:190px;object-fit:cover;border-radius:18px;border:3px solid white;box-shadow:0 8px 20px #0002}
-.note{background:#fff0f3;border-left:5px solid var(--pink);padding:18px;border-radius:15px;text-align:left}
 
-.final-heart{font-size:90px;animation:beat 1s infinite}
-.small{font-size:13px;opacity:.65}
-.progress{position:absolute;top:15px;left:50%;transform:translateX(-50%);font-size:12px;color:#9c5265;z-index:2}
+.memory img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:18px;
+  border:3px solid white;
+  box-shadow:0 8px 20px #0002
+}
 
-.secret{margin-top:10px;background:#fff0c8;color:#7c5010;box-shadow:none}
-#surprise{display:none;margin-top:15px;padding:18px 22px;border-radius:18px;background:#27131a;color:white;font-weight:700;animation:pop .5s}
-@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.note{
+  background:#fff0f3;
+  border-left:5px solid var(--pink);
+  padding:18px;
+  border-radius:15px;
+  text-align:left
+}
+
+.final-heart{
+  font-size:90px;
+  animation:beat 1s infinite
+}
+
+.small{
+  font-size:13px;
+  opacity:.65
+}
+
+.progress{
+  position:absolute;
+  top:15px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:12px;
+  color:#9c5265;
+  z-index:2
+}
+
+.secret{
+  margin-top:10px;
+  background:#fff0c8;
+  color:#7c5010;
+  box-shadow:none
+}
+
+#surprise{
+  display:none;
+  margin-top:15px;
+  padding:18px 22px;
+  border-radius:18px;
+  background:#27131a;
+  color:white;
+  font-weight:700;
+  animation:pop .5s
+}
+
+@keyframes pop{
+  from{
+    transform:scale(.7);
+    opacity:0
+  }
+  to{
+    transform:scale(1);
+    opacity:1
+  }
+}
 
 @media(max-width:650px){
- .card{padding:20px;min-height:620px}.screen{min-height:570px}
- .photos{grid-template-columns:1fr 1fr}.photo.center{height:230px}.photo{height:190px}
- .photos .photo:last-child{display:none}
- .memory{grid-template-columns:1fr 1fr}.memory img{height:170px}
- .gift{width:105px;height:105px;font-size:55px}
- p{font-size:16px}
+
+  .card{
+    padding:20px;
+    min-height:620px
+  }
+
+  .screen{
+    min-height:570px
+  }
+
+  .photos{
+    grid-template-columns:1fr 1fr
+  }
+
+  .photo.center{
+    height:230px
+  }
+
+  .photo{
+    height:190px
+  }
+
+  .photos .photo:last-child{
+    display:none
+  }
+
+  .memory{
+    grid-template-columns:1fr 1fr
+  }
+
+  .memory img{
+    height:170px
+  }
+
+  .gift{
+    width:105px;
+    height:105px;
+    font-size:55px
+  }
+
+  p{
+    font-size:16px
+  }
 }
 </style>
 </head>
+
 <body>
+
 <div class="app">
 <div class="card">
+
 <div class="progress" id="progress">1 / 8</div>
 
+
+<!-- SCREEN 1 -->
+
 <section class="screen active" id="s1">
+
   <div class="badge">🎀 A little surprise from Yash</div>
+
   <div class="heart">❤️</div>
-  <h1>For Kajal Didi</h1>
-  <p>Meri pyaari behen ke liye kuch special banaya hai.<br>
-  <b>Ready?</b> 👀</p>
-  <button onclick="go(2)">OPEN KARO ✨</button>
+
+  <h1>For Shweta Didi</h1>
+
+  <p>
+    Meri pyaari Shweta Didi ke liye ek chhota sa surprise banaya hai. ❤️
+    <br>
+    Kyunki kuch rishte words se nahi,
+    <b>dil se special hote hain.</b> 🥹
+    <br><br>
+    <b>Ready?</b> 👀
+  </p>
+
+  <button onclick="go(2)">
+    OPEN KARO ✨
+  </button>
+
 </section>
+
+
+<!-- SCREEN 2 -->
 
 <section class="screen" id="s2">
+
   <div class="rakhi">🪢</div>
-  <h2>Happy Raksha Bandhan, Kajal Didi</h2>
-  <p>Ye sirf ek Rakhi nahi hai...<br>
-  ek chhoti si reminder hai ki <b>aap mere liye important ho.</b> 🥹</p>
-  <button onclick="go(3)">Aage Chalo 💕</button>
+
+  <h2>Happy Raksha Bandhan, Shweta Didi</h2>
+
+  <p>
+    Ye Rakhi sirf ek dhaaga nahi hai...
+    <br>
+    ye us pyaare rishte ki yaad hai
+    jo hamesha dil ke kareeb rahega. ❤️
+    <br><br>
+    <b>Aap mere liye bahut special hain, Didi.</b> 🫶
+  </p>
+
+  <button onclick="go(3)">
+    Aage Chalo 💕
+  </button>
+
 </section>
+
+
+<!-- SCREEN 3 -->
 
 <section class="screen" id="s3">
+
   <h2>Happy Raksha Bandhan 📸</h2>
+
   <div class="photos">
-    <div><img class="photo" src="yash.png"><div class="caption">Yash 😎</div></div>
-    <div><img class="photo center" src="kajal1.jpeg"><div class="caption">Kajal Didi</div></div>
-    <div><img class="photo" src="kajal2.jpeg"><div class="caption">Always smiling ✨</div></div>
+
+    <div>
+      <img class="photo" src="yash.png">
+      <div class="caption">Yash 😎</div>
+    </div>
+
+    <div>
+      <img class="photo center" src="kajal1.jpeg">
+      <div class="caption">Shweta Didi ❤️</div>
+    </div>
+
+    <div>
+      <img class="photo" src="kajal2.jpeg">
+      <div class="caption">Beautiful Smile ✨</div>
+    </div>
+
   </div>
-  <p class="small">Kuch photos sirf photos nahi hoti... woh memories ban jaati hain.</p>
-  <button onclick="go(4)">Next 💌</button>
+
+  <p class="small">
+    Kuch memories sirf photos nahi hoti...
+    <br>
+    woh dil ke kareeb rehne wali yaadein ban jaati hain. ❤️
+  </p>
+
+  <button onclick="go(4)">
+    Next 💌
+  </button>
+
 </section>
+
+
+<!-- SCREEN 4 -->
 
 <section class="screen" id="s4">
+
   <div class="heart">🫶</div>
+
   <h2>Ek Baat Sach Mein...</h2>
+
   <div class="note">
-    Tum hamesha supportive rahi ho. aur shayad main har baar bol nahi pata,
-    lekin main genuinely uski value karta hoon. ❤️<br><br>
-    Life mein chahe jo bhi ho, bas khush rehna aur apne dreams ke peeche jaana.
+
+    Aapne hamesha apne pyaar, care aur support se mujhe motivate kiya hai. ❤️
+
+    <br><br>
+
+    Shayad main har baar keh nahi pata,
+    lekin <b>aapki har chhoti si care mere liye bahut matter karti hai.</b>
+
+    <br><br>
+
+    Bhagwan kare aapki smile kabhi kam na ho,
+    aapke saare dreams poore hon
+    aur har din aapke liye khushiyan lekar aaye. ✨
+
   </div>
-  <button onclick="go(5)">Ek Surprise Aur Hai 👀</button>
+
+  <button onclick="go(5)">
+    Ek Surprise Aur Hai 👀
+  </button>
+
 </section>
+
+
+<!-- SCREEN 5 -->
 
 <section class="screen" id="s5">
-  <div class="emoji" style="font-size:70px">🎁</div>
-  <h2>3 Surprise Gifts</h2>
-  <p>Jo mann kare us gift ko open karo. 😌</p>
-  <div class="gifts">
-    <div class="gift" onclick="gift(this,1)">🎁</div>
-    <div class="gift" onclick="gift(this,2)">🎁</div>
-    <div class="gift" onclick="gift(this,3)">🎁</div>
+
+  <div class="emoji" style="font-size:70px">
+    🎁
   </div>
-  <div id="giftMessage">Koi ek choose karo 👀</div>
-  <button onclick="go(6)">Next 💖</button>
+
+  <h2>3 Surprise Gifts</h2>
+
+  <p>
+    Didi, gifts chhote hain...
+    <br>
+    par inke peeche feelings bahut saari hain. 😄❤️
+  </p>
+
+  <div class="gifts">
+
+    <div class="gift" onclick="gift(this,1)">
+      🎁
+    </div>
+
+    <div class="gift" onclick="gift(this,2)">
+      🎁
+    </div>
+
+    <div class="gift" onclick="gift(this,3)">
+      🎁
+    </div>
+
+  </div>
+
+  <div id="giftMessage">
+    Koi ek choose karo 👀
+  </div>
+
+  <button onclick="go(6)">
+    Next 💖
+  </button>
+
 </section>
+
+
+<!-- SCREEN 6 -->
 
 <section class="screen" id="s6">
+
   <h2>Thodi Aur Photos 📸</h2>
+
   <div class="memory">
-    <img src="kajal2.jpeg"><img src="kajal3.jpeg"><img src="kajal4.jpeg">
+
+    <img src="kajal2.jpeg">
+    <img src="kajal3.jpeg">
+    <img src="kajal4.jpeg">
+
   </div>
-  <p>Ek supportive sister milna bhi ek blessing hai. ❤️</p>
-  <button onclick="go(7)">Last Surprise 😈</button>
+
+  <p>
+    Kuch memories waqt ke saath purani ho jaati hain,
+    <br>
+    lekin kuch rishte har saal aur bhi khoobsurat lagne lagte hain. ❤️
+  </p>
+
+  <button onclick="go(7)">
+    Last Surprise 😈
+  </button>
+
 </section>
+
+
+<!-- SCREEN 7 -->
 
 <section class="screen" id="s7">
-  <div style="font-size:78px">😈🎀</div>
+
+  <div style="font-size:78px">
+    😈🎀
+  </div>
+
   <h2>SECRET BUTTON</h2>
-  <p>Warning: is button ko click karne ki zarurat nahi hai.<br>
-  <b>Seriously.</b> 😂</p>
-  <button class="secret" onclick="secret()">DO NOT CLICK 🚫</button>
-  <div id="surprise">😂 Congratulations Kajal Didi!<br>
-  Tumne successfully woh button click kar diya jise click nahi karna tha. 😭<br>
-  — Yash</div>
-  <button onclick="go(8)">Okay Ab Final ❤️</button>
+
+  <p>
+    Warning: Didi ke liye secret surprise hai! 😈🎀
+    <br>
+    Lekin agar aapne click kar diya...
+    <br>
+    <b>toh surprise aapki responsibility hai.</b> 😂
+  </p>
+
+  <button class="secret" onclick="secret()">
+    DO NOT CLICK 🚫
+  </button>
+
+  <div id="surprise">
+
+    😂 Congratulations Shweta Didi!
+
+    <br>
+
+    Aapne successfully woh button click kar diya
+    jise click nahi karna tha. 😭
+
+    <br>
+
+    — Yash ❤️
+
+  </div>
+
+  <button onclick="go(8)">
+    Okay Ab Final ❤️
+  </button>
+
 </section>
+
+
+<!-- SCREEN 8 -->
 
 <section class="screen" id="s8">
-  <div class="final-heart">❤️</div>
-  <h1>Happy Raksha Bandhan</h1>
-  <h2>Kajal Didi 🪢</h2>
+
+  <div class="final-heart">
+    ❤️
+  </div>
+
+  <h1>
+    Happy Raksha Bandhan
+  </h1>
+
+  <h2>
+    Shweta Didi 🪢
+  </h2>
+
   <p>
-    Aapki har wish poori ho,<br>
-    tum hamesha khush raho,<br>
-    aur life mein jo chahe woh mile. ✨
+
+    Aapki zindagi hamesha khushiyon se bhari rahe,
+    <br>
+
+    aapke har sapne ko ek nayi udaan mile,
+    <br>
+
+    aur aapki smile hamesha aise hi bani rahe. ✨❤️
+
     <br><br>
-    <b>Thank you for always being supportive.</b><br>
-    Love you, Sis. ❤️
+
+    <b>
+      Thank you, Shweta Didi,
+      hamesha itni caring aur supportive rehne ke liye.
+    </b>
+
+    <br><br>
+
+    Aap hamesha meri special Didi rahengi. ❤️
+
   </p>
-  <button onclick="celebrate()">CELEBRATE 🎉</button>
-  <div class="small">Made with ❤️ by Yash</div>
+
+  <button onclick="celebrate()">
+    CELEBRATE 🎉
+  </button>
+
+  <div class="small">
+    Made with ❤️ by Yash
+  </div>
+
 </section>
 
 </div>
 </div>
 
+
 <script>
+
 let current=1;
 
+
+/* PAGE NAVIGATION */
+
 function go(n){
-  document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
-  document.getElementById('s'+n).classList.add('active');
+
+  document
+    .querySelectorAll('.screen')
+    .forEach(x=>x.classList.remove('active'));
+
+  document
+    .getElementById('s'+n)
+    .classList.add('active');
+
   current=n;
-  document.getElementById('progress').textContent=n+' / 8';
-  window.scrollTo({top:0,behavior:'smooth'});
+
+  document
+    .getElementById('progress')
+    .textContent=n+' / 8';
+
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  });
+
 }
+
+
+/* GIFTS */
 
 function gift(el,n){
+
   el.classList.add('open');
+
   const messages=[
-    "🎀 Gift 1: Aapke liye unlimited happiness aur good vibes!",
-    "😂 Gift 2: Ek lifetime ka annoying-but-loving bhai. Sorry, return policy nahi hai!",
-    "💌 Gift 3: Aapki support ke liye ek bada sa THANK YOU. ❤️"
+
+    "🎉 Gift 1: Shweta Didi, aapke liye unlimited happiness aur good vibes! ❤️",
+
+    "😄 Gift 2: Ek lifetime ka annoying-but-loving bhai. Sorry, return policy nahi hai! 😂❤️",
+
+    "💌 Gift 3: Aapki care aur support ke liye ek dil se THANK YOU. ❤️"
+
   ];
-  document.getElementById('giftMessage').innerHTML=messages[n-1];
+
+  document
+    .getElementById('giftMessage')
+    .innerHTML=messages[n-1];
+
   confetti(18);
+
 }
+
+
+/* SECRET */
 
 function secret(){
-  document.getElementById('surprise').style.display='block';
+
+  document
+    .getElementById('surprise')
+    .style.display='block';
+
   confetti(30);
+
 }
+
+
+/* CELEBRATE */
 
 function celebrate(){
+
   confetti(100);
-  setTimeout(()=>alert("Happy Raksha Bandhan, Kajal Didi — Yash"),500);
+
+  setTimeout(()=>{
+
+    alert(
+      "Happy Raksha Bandhan, Shweta Didi — Yash ❤️"
+    );
+
+  },500);
+
 }
 
+
+/* CONFETTI */
+
 function confetti(count){
-  const icons=['❤️','💖','🌸','✨','🎀','🪷','🪢','💕'];
+
+  const icons=[
+    '❤️',
+    '💖',
+    '🌸',
+    '✨',
+    '🎀',
+    '🪷',
+    '🪢',
+    '💕'
+  ];
+
   for(let i=0;i<count;i++){
+
     const x=document.createElement('div');
-    x.textContent=icons[Math.floor(Math.random()*icons.length)];
+
+    x.textContent=
+      icons[
+        Math.floor(
+          Math.random()*icons.length
+        )
+      ];
+
     x.style.position='fixed';
-    x.style.left=Math.random()*100+'vw';
+
+    x.style.left=
+      Math.random()*100+'vw';
+
     x.style.top='-30px';
-    x.style.fontSize=(16+Math.random()*22)+'px';
+
+    x.style.fontSize=
+      (16+Math.random()*22)+'px';
+
     x.style.zIndex=9999;
+
     x.style.pointerEvents='none';
-    x.style.transition='transform '+(2+Math.random()*2)+'s linear, opacity 3s';
+
+    x.style.transition=
+      'transform '+
+      (2+Math.random()*2)+
+      's linear, opacity 3s';
+
     document.body.appendChild(x);
+
     requestAnimationFrame(()=>{
-      x.style.transform='translateY('+(window.innerHeight+80)+'px) rotate('+(Math.random()*900-450)+'deg)';
+
+      x.style.transform=
+        'translateY('+
+        (window.innerHeight+80)+
+        'px) rotate('+
+        (Math.random()*900-450)+
+        'deg)';
+
       x.style.opacity='0';
+
     });
-    setTimeout(()=>x.remove(),4200);
+
+    setTimeout(
+      ()=>x.remove(),
+      4200
+    );
+
   }
+
 }
+
 </script>
+
 </body>
 </html>

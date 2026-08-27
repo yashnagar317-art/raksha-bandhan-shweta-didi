@@ -1,4 +1,4 @@
-RAKSHA BANDHAN — KAJAL DIDI & YASH
+RAKSHA BANDHAN — shweta DIDI & YASH
 
 1. Keep all files in the same folder.
 2. Open index.html in Chrome/Edge.
@@ -9,4 +9,4 @@ RAKSHA BANDHAN — KAJAL DIDI & YASH
 7. The music page is linked from the first screen of the website.
 8. Gifts, secret surprise, confetti and all animations are included.
 
-Made for Kajal Didi by Yash.
+Made for Shweta Didi by Yash.
